@@ -1,6 +1,6 @@
 FROM openjdk:8-jre-alpine
 
-ARG LB_VER=3.5.4
+ARG LB_VER=3.3.5
 
 MAINTAINER Tilikov Vyacheslav
 
