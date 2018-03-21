@@ -2,7 +2,8 @@ FROM openjdk:8-jre-alpine
 
 ARG LB_VER=3.3.5
 
-MAINTAINER Tilikov Vyacheslav
+LABEL maintainer="Devil.Ster.1"
+LABEL version="1.0"
 
 ENV LB_DRIVER="org.postgresql.Driver" \
     LB_CLASSPATH="/liquibase/lib/postgresql-42.2.1.jar" \
