@@ -3,7 +3,7 @@ FROM openjdk:8-jre-alpine
 ARG LB_VER=3.3.5
 
 LABEL maintainer="Devil.Ster.1"
-LABEL version="1.0"
+LABEL version="1.0.2"
 
 ENV LB_DRIVER="org.postgresql.Driver" \
     LB_CLASSPATH="/liquibase/lib/postgresql-42.2.1.jar" \
@@ -38,8 +38,9 @@ RUN apk add --no-cache --virtual .build-deps \
     && rm -rf /var/cache/apk/*
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 VOLUME /migrations
 WORKDIR /migrations
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
