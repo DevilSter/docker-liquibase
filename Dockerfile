@@ -1,6 +1,6 @@
 FROM openjdk:8-jre-alpine
 
-ARG LB_VER=3.5.4
+ARG LB_VER=3.1.1
 
 LABEL maintainer="Devil.Ster.1"
 LABEL version="1.0"
@@ -38,8 +38,9 @@ RUN apk add --no-cache --virtual .build-deps \
     && rm -rf /var/cache/apk/*
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 VOLUME /migrations
 WORKDIR /migrations
 
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
