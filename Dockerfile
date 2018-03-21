@@ -12,7 +12,8 @@ ENV LB_DRIVER="org.postgresql.Driver" \
     LB_PASS="" \
     LB_CHANGELOG="liquibase.xml" \
     LB_CONTEXTS="" \
-    LB_OPTS=""
+    LB_OPTS="" \
+    LB_LOGLEVEL="info"
 
 RUN apk add --no-cache --virtual .build-deps \
         curl \
