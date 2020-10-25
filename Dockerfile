@@ -1,12 +1,12 @@
 FROM openjdk:8-jre-alpine
 
-ARG LB_VER=3.5.4
+ARG LB_VER=3.10.3
 
 LABEL maintainer="Devil.Ster.1"
-LABEL version="1.0.2"
+LABEL version="1.0.3"
 
 ENV LB_DRIVER="org.postgresql.Driver" \
-    LB_CLASSPATH="/liquibase/lib/postgresql-42.2.1.jar" \
+    LB_CLASSPATH="/liquibase/lib/postgresql-42.2.18.jar" \
     LB_URL="" \
     LB_USER="" \
     LB_PASS="" \
@@ -30,7 +30,7 @@ RUN apk add --no-cache --virtual .build-deps \
     && ln -s /liquibase/liquibase /usr/local/bin/liquibase \
     \
     && curl -fSL \
-        https://jdbc.postgresql.org/download/postgresql-42.2.1.jar \
+        https://jdbc.postgresql.org/download/postgresql-42.2.18.jar \
         -o /liquibase/lib/postgresql-42.2.1.jar \
     \
     && rm -fr /tmp/lbsrc \
