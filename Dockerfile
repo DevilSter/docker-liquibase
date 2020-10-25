@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM openjdk:11-jre-slim-buster
 
 ARG LB_VER=4.1.1
 
