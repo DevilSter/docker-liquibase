@@ -1,6 +1,6 @@
 FROM openjdk:8-jre-alpine
 
-ARG LB_VER=3.10.3
+ARG LB_VER=4.1.1
 
 LABEL maintainer="Devil.Ster.1"
 LABEL version="1.0.3"
