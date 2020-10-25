@@ -12,7 +12,7 @@ echo -n > /liquibase.properties
 echo "driver: org.postgresql.Driver" >> /liquibase.properties
 
 ## Classpath
-echo "classpath: /liquibase/lib/postgresql-42.2.1.jar" >> /liquibase.properties
+echo "classpath: /liquibase/lib/postgresql-42.2.18.jar" >> /liquibase.properties
 
 ## Database url
 if [[ -n "$LB_URL" ]]; then
